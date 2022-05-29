@@ -5,3 +5,9 @@
 .fill-height {
   height: 100vh;
 }
+
+section:before {
+  height: 56px;
+  content: "";
+  display:block;
+}
