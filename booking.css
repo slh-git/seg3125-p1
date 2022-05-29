@@ -1,0 +1,13 @@
+:root {
+  --bs-primary: #4dd4ac;
+}
+
+.fill-height {
+  height: 100vh;
+}
+
+section:before {
+  height: 56px;
+  content: "";
+  display:block;
+}
