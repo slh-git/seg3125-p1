@@ -1,6 +1,7 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -27,12 +28,20 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#about">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="#about"
+                >
                   About
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#services">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="#services"
+                >
                   Services
                 </a>
               </li>
@@ -153,6 +162,7 @@ function App() {
           </p>
         </section>
       </div>
+      <Footer />
     </div>
   );
 }
