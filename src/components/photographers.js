@@ -44,7 +44,7 @@ export const Photographers = () => {
       {photographersList.map((photographer, index) => (
         <div class="card my-4">
           <div class="card-body row justify-content-between">
-            <div class="col-9">
+            <div class="col-12 col-md-8 col-lg-9 col-xl-10">
               <h5>{photographer.name}</h5>
               <p>{photographer.description}</p>
               <div class="row justify-content-between">
@@ -71,7 +71,9 @@ export const Photographers = () => {
                 <div />
               </div>
             </div>
-            <img src={photographer.img} class="mb-3 col-3 col-lg-2" />
+            <div class="d-flex justify-content-center col-md-4 col-lg-3 col-xl-2 mt-2 mt-md-0">
+              <img src={photographer.img} class="col-4 col-md-12"/>
+            </div>
           </div>
         </div>
       ))}
