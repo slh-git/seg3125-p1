@@ -1,13 +1,13 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./index.css";
 import Footer from "../components/footer";
 import { Services } from "../components/services";
 import { Photographers } from "../components/photographers";
 import Nav from "../components/nav";
 import Header from "../components/header";
 
-function App() {
+const IndexPage = () => {
   return (
     <div class="App">
       <Nav />
@@ -55,4 +55,4 @@ function App() {
   );
 }
 
-export default App;
+export default IndexPage;

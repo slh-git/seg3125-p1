@@ -41,7 +41,7 @@ export const photographersList = [
 export const Photographers = () => {
   return (
     <div class="container p-0">
-      {photographersList.map((photographer, index) => (
+      {photographersList.map((photographer) => (
         <div class="card my-4">
           <div class="card-body row justify-content-between">
             <div class="col-12 col-md-8 col-lg-9 col-xl-10">
@@ -57,7 +57,7 @@ export const Photographers = () => {
                   ))}
                 </div>
                 <div class="col-auto">
-                  {photographer.services.map((service, index) => (
+                  {photographer.services.map((service) => (
                     <span class="badge rounded-pill bg-light text-dark mx-1">
                       {service}
                     </span>
@@ -75,7 +75,7 @@ export const Photographers = () => {
               <img
                 src={photographer.img}
                 class="col-4 col-md-12"
-                alt={`Image of photograper ${photographer.name}`}
+                alt={`Photograper ${photographer.name}`}
               />
             </div>
           </div>
