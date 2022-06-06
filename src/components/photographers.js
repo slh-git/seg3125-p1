@@ -72,7 +72,11 @@ export const Photographers = () => {
               </div>
             </div>
             <div class="d-flex justify-content-center col-md-4 col-lg-3 col-xl-2 mt-2 mt-md-0">
-              <img src={photographer.img} class="col-4 col-md-12"/>
+              <img
+                src={photographer.img}
+                class="col-4 col-md-12"
+                alt={`Image of photograper ${photographer.name}`}
+              />
             </div>
           </div>
         </div>
