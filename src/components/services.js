@@ -1,44 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-export const servicesList = [
-  {
-    name: "portrait",
-    title: "Portrait",
-    price: 50,
-    img: "https://picsum.photos/id/996/300",
-  },
-  {
-    name: "wedding",
-    title: "Wedding",
-    price: 100,
-    img: "https://picsum.photos/id/1004/300",
-  },
-  {
-    name: "family",
-    title: "Family",
-    price: 150,
-    img: "https://picsum.photos/id/838/300",
-  },
-  {
-    name: "baby",
-    title: "Baby",
-    price: 200,
-    img: "https://picsum.photos/id/1066/300",
-  },
-  {
-    name: "product",
-    title: "Product",
-    price: 300,
-    img: "https://picsum.photos/id/252/300",
-  },
-  {
-    name: "pet",
-    title: "Pet",
-    price: 50,
-    img: "https://picsum.photos/id/1025/300",
-  },
-];
+import { servicesList } from "../data/lists";
 
 export const Services = () => {
   return (

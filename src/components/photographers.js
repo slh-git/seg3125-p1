@@ -2,41 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "./photographers.css";
-
-export const photographersList = [
-  {
-    name: "John Doe",
-    img: "https://xsgames.co/randomusers/avatar.php?g=male&s=2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor, dui, justo aliquet integer. Et donec arcu consequat ornare sit interdum non nulla nibh. Phasellus ultrices volutpat massa metus. Consectetur eu in et turpis volutpat nec volutpat, eget varius. Habitasse ultrices ac elementum fames eget arcu, egestas.",
-    services: ["portrait", "family", "pet"],
-    rating: 4,
-  },
-  {
-    name: "Jane Doe",
-    img: "https://xsgames.co/randomusers/avatar.php?g=female&s=1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor, dui, justo aliquet integer. Et donec arcu consequat ornare sit interdum non nulla nibh. Phasellus ultrices volutpat massa metus. Consectetur eu in et turpis volutpat nec volutpat, eget varius. Habitasse ultrices ac elementum fames eget arcu, egestas.",
-    services: ["wedding", "family", "baby"],
-    rating: 5,
-  },
-  {
-    name: "Jack Doe",
-    img: "https://xsgames.co/randomusers/avatar.php?g=male&s=1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor, dui, justo aliquet integer. Et donec arcu consequat ornare sit interdum non nulla nibh. Phasellus ultrices volutpat massa metus. Consectetur eu in et turpis volutpat nec volutpat, eget varius. Habitasse ultrices ac elementum fames eget arcu, egestas.",
-    services: ["portrait", "product", "pet"],
-    rating: 4,
-  },
-  {
-    name: "Jill Doe",
-    img: "https://xsgames.co/randomusers/avatar.php?g=female&s=2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor, dui, justo aliquet integer. Et donec arcu consequat ornare sit interdum non nulla nibh. Phasellus ultrices volutpat massa metus. Consectetur eu in et turpis volutpat nec volutpat, eget varius. Habitasse ultrices ac elementum fames eget arcu, egestas.",
-    services: ["wedding", "product", "baby"],
-    rating: 3,
-  },
-];
+import { photographersList } from "../data/lists";
 
 export const Photographers = () => {
   return (
