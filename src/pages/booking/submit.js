@@ -101,6 +101,29 @@ const Submit = () => {
           >
             <i class="fa fa-angle-left" aria-hidden="true"></i> Back
           </a>
+          <ul class="nav">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                tabindex="-1"
+                href={`select?s=${service}&p=${photographer}`}
+              >
+                Select
+              </a>
+            </li>
+            <div class="d-flex align-items-center">
+              <i class="fa fa-angle-right text-muted" aria-hidden="true"></i>
+            </div>
+            <li class="nav-item">
+              <a
+                class="nav-link disabled text-decoration-underline"
+                href="#"
+                aria-current="page"
+              >
+                Submit
+              </a>
+            </li>
+          </ul>
           <div></div>
         </div>
       </nav>
@@ -155,7 +178,9 @@ const Submit = () => {
                   End time must be after Start time and between 10:00 and 16:00.
                 </Form.Control.Feedback>
               </Form.Group>
-              <h4 class="display-6 mt-4 mb-0 fs-4 fw-normal">Contact Information</h4>
+              <h4 class="display-6 mt-4 mb-0 fs-4 fw-normal">
+                Contact Information
+              </h4>
               <Form.Group class="mb-2 text-start">
                 <Form.Label class="h6">Name</Form.Label>
                 <Form.Control
@@ -192,7 +217,9 @@ const Submit = () => {
                   <h6 class="fw-normal">{`for ${serviceName()} photos`}</h6>
                 </div>
                 <h6>
-                  {`${hours()} ${hours() === 1 ? 'hr' : 'hrs'} x ${servicePrice().toLocaleString("en-US", {
+                  {`${hours()} ${
+                    hours() === 1 ? "hr" : "hrs"
+                  } x ${servicePrice().toLocaleString("en-US", {
                     style: "currency",
                     currency: "USD",
                   })}`}

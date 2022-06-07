@@ -47,14 +47,33 @@ const Select = () => {
           <a class="btn btn-outline-secondary" href="/">
             <i class="fa fa-home" aria-hidden="true"></i> Home
           </a>
-          {canSubmit() && (
-            <Link
-              to={`/booking/submit?s=${service}&p=${photographer}`}
-              class="btn btn-primary"
-            >
-              Continue
-            </Link>
-          )}
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link disabled text-decoration-underline" aria-current="page" href="#">
+                Select
+              </a>
+            </li>
+            <div class="d-flex align-items-center">
+              <i class="fa fa-angle-right text-muted" aria-hidden="true"></i>
+            </div>
+            <li class="nav-item">
+              <a
+                class={`nav-link ${canSubmit() ? "active" : "disabled"}`}
+                href={`/booking/submit?s=${service}&p=${photographer}`}
+                tabindex="-1"
+              >
+                Submit
+              </a>
+            </li>
+          </ul>
+          <Link
+            to={`/booking/submit?s=${service}&p=${photographer}`}
+            class={`btn  ${
+              canSubmit() ? "btn-primary" : "btn-secondary disabled"
+            }`}
+          >
+            Continue
+          </Link>
         </div>
       </nav>
       {/* Selecting service and photographer */}
