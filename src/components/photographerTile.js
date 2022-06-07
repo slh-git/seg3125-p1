@@ -12,7 +12,7 @@ const PhotographerTile = ({
     !serviceSelected || photographer.services.includes(serviceSelected);
 
   return (
-    <div class="p-2 col-sm-6 col-md-4 col-xl-3" onClick={onSelect}>
+    <div class="p-2 col-sm-6 col-lg-4 col-xl-3" onClick={onSelect}>
       <div
         class={`btn btn-outline-light card text-dark ${
           isSelected && hasService()
