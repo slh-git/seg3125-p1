@@ -38,7 +38,7 @@ const Select = () => {
       </nav>
       {/* Selecting service and photographer */}
       <div class="h-100 text-center">
-        <h2 class="display-6 m-3">Select a Service {service}</h2>
+        <h2 class="display-6 m-3">Select a Service</h2>
         <div class="scroll-menu mx-4">
           {servicesList.map((s, index) => (
             <div class="d-inline-block">
@@ -47,12 +47,12 @@ const Select = () => {
                   // Primary button when service is selected
                   service === s.id ? "btn-primary" : "btn-outline-primary"
                 }
-                        ${
-                          // Disabled looking button when photographer doesn't have service
-                          photographer && !photographerHasService(s.id)
-                            ? " btn-outline-secondary"
-                            : " "
-                        } ${
+                ${
+                  // Disabled looking button when photographer doesn't have service
+                  photographer && !photographerHasService(s.id)
+                    ? " btn-outline-secondary"
+                    : " "
+                } ${
                   // Danger button when service selected and photographer doesn't have service
                   service === s.id &&
                   photographer &&
@@ -68,7 +68,7 @@ const Select = () => {
             </div>
           ))}
         </div>
-        <h2 class="display-6 m-3">Select a Photographer {photographer}</h2>
+        <h2 class="display-6 m-3">Select a Photographer</h2>
         <div class="container">
           <div class="row">
             {photographersList
