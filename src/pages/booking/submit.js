@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import Form from "react-bootstrap/Form";
+import { Modal } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 import { photographersList, servicesList } from "../../data/lists";
 import "./submit.css";
@@ -12,14 +13,14 @@ const Submit = () => {
   const [service] = useState(searchParams.get("s"));
   const [photographer] = useState(searchParams.get("p"));
 
-  // Variables for the form
+  // Variables for the form fields
   const [date, setDate] = useState(
     searchParams.get("d")
       ? searchParams.get("d")
       : new Date().toISOString().split("T")[0]
   );
   const [startTime, setStartTime] = useState(
-    searchParams.get("st") ? searchParams.get("et") : "09:00"
+    searchParams.get("st") ? searchParams.get("st") : "09:00"
   );
   const [endTime, setEndTime] = useState(
     searchParams.get("et") ? searchParams.get("et") : "10:00"
@@ -31,9 +32,9 @@ const Submit = () => {
     searchParams.get("e") ? searchParams.get("e") : ""
   );
 
-  // Variables for the form validation
-  const [formValid, setFormValid] = useState(true);
+  // Variables for the form validation and confirm modal
   const [validated, setValidated] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   // Getters for service and photographer information
   const photographerName = () =>
@@ -59,16 +60,14 @@ const Submit = () => {
   // Functions for checking whether the form variables are valid
   const hoursValid = () => hours() > 0;
 
+  // Functions for opening and closing the form
+  const handleOpenConfirm = () => setShowConfirm(true);
+  const handleCloseConfirm = () => setShowConfirm(false);
+
   // Handling form submission
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const form = event.currentTarget;
-    if (form.checkValidity() === false || !hoursValid()) {
-      event.stopPropagation();
-    }
-
-    setValidated(true);
     setSearchParams({
       s: service,
       p: photographer,
@@ -78,6 +77,16 @@ const Submit = () => {
       n: name,
       e: email,
     });
+
+    const form = event.currentTarget;
+    if (form.checkValidity() === false || !hoursValid()) {
+      event.stopPropagation();
+    } else {
+      setValidated(true);
+      handleOpenConfirm();
+    }
+
+    setValidated(true);
   };
 
   return (
@@ -96,7 +105,7 @@ const Submit = () => {
           <div></div>
         </div>
       </nav>
-      <div class='container-xl'>
+      <div class="container-xl">
         <div class="row">
           <div class="col-12 col-md-5 offset-md-1 text-center px-4">
             <Form
@@ -107,7 +116,7 @@ const Submit = () => {
               id="submit-form"
             >
               <h2 class="display-6 my-3">Select Date &#38; Time</h2>
-              <Form.Group class="my-3 text-start">
+              <Form.Group class="my-2 text-start">
                 <Form.Label class="h6">Date</Form.Label>
                 <Form.Control
                   type="date"
@@ -117,7 +126,7 @@ const Submit = () => {
                   required
                 />
               </Form.Group>
-              <Form.Group class="my-3 text-start">
+              <Form.Group class="my-2 text-start">
                 <Form.Label class="h6">Start time</Form.Label>
                 <Form.Control
                   type="time"
@@ -132,7 +141,7 @@ const Submit = () => {
                   Start time must be between 9:00 and 15:00
                 </Form.Control.Feedback>
               </Form.Group>
-              <Form.Group class="my-3 text-start">
+              <Form.Group class="my-2 text-start">
                 <Form.Label class="h6">End time</Form.Label>
                 <Form.Control
                   type="time"
@@ -148,7 +157,7 @@ const Submit = () => {
                 </Form.Control.Feedback>
               </Form.Group>
               <h4 class="display-6 mt-4 mb-0 fs-4">Contact Information</h4>
-              <Form.Group class="mb-3 text-start">
+              <Form.Group class="mb-2 text-start">
                 <Form.Label class="h6">Name</Form.Label>
                 <Form.Control
                   type="text"
@@ -160,7 +169,7 @@ const Submit = () => {
                   Please provide a valid name.
                 </Form.Control.Feedback>
               </Form.Group>
-              <Form.Group class="my-3 text-start">
+              <Form.Group class="my-2 text-start">
                 <Form.Label class="h6">Email</Form.Label>
                 <Form.Control
                   type="email"
@@ -224,6 +233,58 @@ const Submit = () => {
           </div>
         </div>
       </div>
+      <Modal show={showConfirm} onHide={handleCloseConfirm}>
+        <Modal.Header closeButton>
+          <Modal.Title>Thank you for booking!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>
+            <span>You've booked a </span>
+            <strong>{serviceName()}</strong>
+            <span> session with </span>
+            <strong>{photographerName()}</strong>
+            <span> on </span>
+            <strong>{date}</strong>
+            <span> between </span>
+            <strong>{startTime}</strong>
+            <span> and </span>
+            <strong>{endTime}</strong>
+            <span> for </span>
+            <strong>
+              {total().toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+              })}
+            </strong>
+            .
+          </p>
+          <hr />
+          <p class="m-0">
+            <span>Name: </span>
+            <strong>{name}</strong>
+          </p>
+          <p class="m-0">
+            <span>Email: </span>
+            <strong>{email}</strong>
+          </p>
+          <hr />
+          <p class="mb-2">Use this link to edit your session:</p>
+          <Form.Control
+            type="text"
+            value={window.location.href}
+            readOnly
+            onClick={() => {
+              navigator.clipboard.writeText(window.location.href);
+              alert("Link copied to clipboard!");
+            }}
+          />
+        </Modal.Body>
+        <Modal.Footer>
+          <a class="btn btn-outline-primary" href="/">
+            Return Home
+          </a>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
