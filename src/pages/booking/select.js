@@ -50,7 +50,7 @@ const Select = () => {
           {canSubmit() && (
             <Link
               to={`/booking/submit?s=${service}&p=${photographer}`}
-              class="btn btn-outline-primary"
+              class="btn btn-primary"
             >
               Continue
             </Link>

@@ -15,9 +15,9 @@ export const Services = () => {
                   class="card-img-top mb-3"
                   alt={`Service ${service.name}`}
                 />
-                <div class="row justify-content-between align-items-center">
-                  <h5 class="col card-title text-dark">{service.title}</h5>
-                  <h6 class="col-auto text-muted">{`$${service.price}/hr`}</h6>
+                <div class="row align-items-center">
+                  <h5 class="col card-title text-dark text-start">{service.title}</h5>
+                  <h6 class="col-auto text-muted text-end">{`$${service.price}/hr`}</h6>
                 </div>
               </div>
             </a>

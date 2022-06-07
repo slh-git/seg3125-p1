@@ -13,7 +13,7 @@ const Header = () => {
           Affordable studio photography service for all
         </p>
         <a
-          class="btn btn-outline-primary btn"
+          class="btn btn-primary btn"
           href="booking/select"
           role="button"
         >

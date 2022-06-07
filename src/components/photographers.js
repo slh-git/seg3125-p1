@@ -9,27 +9,11 @@ const PhotographerListItem = ({ photographer, index }) => {
   return (
     <div class="card my-4">
       <div class="card-body">
-        <div class="row justify-content-between">
+        <div class="row">
           <div class="col-12 col-md-8 col-lg-9 col-xl-10">
-            <h5>{photographer.name}</h5>
-            <p>{photographer.description}</p>
-            <div class="row justify-content-between">
-              <div class="col-3">
-                {Array.from(Array(photographer.rating)).map(() => (
-                  <i class="icon fa fa-star" aria-hidden="true"></i>
-                ))}
-                {Array.from(Array(5 - photographer.rating)).map(() => (
-                  <i class="icon fa fa-star-o" aria-hidden="true"></i>
-                ))}
-              </div>
-              <div class="col-6 text-center">
-                {photographer.services.map((service) => (
-                  <span class="badge rounded-pill bg-light text-dark mx-1">
-                    {service}
-                  </span>
-                ))}
-              </div>
-              <div class="col-3 text-end">
+            <div className="row align-content-center mb-2">
+              <h5 class="col">{photographer.name}</h5>
+              <div class="col text-end">
                 <a
                   class="btn btn-sm btn-outline-primary"
                   href={`booking/select?p=${photographer.id}`}
@@ -37,13 +21,30 @@ const PhotographerListItem = ({ photographer, index }) => {
                   {`Book ${photographer.name}`}
                 </a>
               </div>
-              <div />
+            </div>
+            <p class="mb-2">{photographer.description}</p>
+            <div class="row">
+              <div class="col-4 col-md-3 col-xl-2">
+                {Array.from(Array(photographer.rating)).map(() => (
+                  <i class="icon fa fa-star" aria-hidden="true"></i>
+                ))}
+                {Array.from(Array(5 - photographer.rating)).map(() => (
+                  <i class="icon fa fa-star-o" aria-hidden="true"></i>
+                ))}
+              </div>
+              <div class="col text-end mb-3">
+                {photographer.services.map((service) => (
+                  <span class="badge rounded-pill bg-light text-dark mx-1">
+                    {service}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
           <div class="d-flex justify-content-center col-md-4 col-lg-3 col-xl-2 mt-2 mt-md-0">
             <img
               src={photographer.img}
-              class="col-4 col-md-12"
+              class="col-4 col-md-12 mt-2 mt-md-0"
               alt={`Photograper ${photographer.name}`}
             />
           </div>
@@ -73,10 +74,9 @@ const PhotographerListItem = ({ photographer, index }) => {
                   {Array.from(Array(10)).map((_, i) => (
                     <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                       <img
-                        src={`https://picsum.photos/300?random=${index *
-                          10 +
+                        src={`https://picsum.photos/300?random=${index * 10 +
                           i}`}
-                        class="img-fluid m-2"
+                        class="img-fluid m-2 border border-dark"
                         alt={`Photograper ${photographer.name}`}
                       />
                     </div>

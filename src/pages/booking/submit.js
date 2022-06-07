@@ -155,7 +155,7 @@ const Submit = () => {
                   End time must be after Start time and between 10:00 and 16:00.
                 </Form.Control.Feedback>
               </Form.Group>
-              <h4 class="display-6 mt-4 mb-0 fs-4">Contact Information</h4>
+              <h4 class="display-6 mt-4 mb-0 fs-4 fw-normal">Contact Information</h4>
               <Form.Group class="mb-2 text-start">
                 <Form.Label class="h6">Name</Form.Label>
                 <Form.Control
@@ -185,7 +185,7 @@ const Submit = () => {
           <div class="col-12 col-md-5 text-center">
             <h2 class="display-6 my-3">Confirm and Submit</h2>
             <div class="col-10 mx-auto">
-              <h6 class="display-6 fs-5">Your Order Details</h6>
+              <h6 class="display-6 fs-5 fw-normal">Your Order Details</h6>
               <div class="d-flex justify-content-between align-items-end my-2">
                 <div class="text-start">
                   <h6>{`${photographerName()}`}</h6>

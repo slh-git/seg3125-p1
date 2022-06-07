@@ -12,7 +12,7 @@ const PhotographerTile = ({
     !serviceSelected || photographer.services.includes(serviceSelected);
 
   return (
-    <div class="p-2 col-sm-6 col-md-4 col-lg-3" onClick={onSelect}>
+    <div class="p-2 col-sm-6 col-md-4 col-xl-3" onClick={onSelect}>
       <div
         class={`btn btn-outline-light card text-dark ${
           isSelected && hasService()
@@ -30,9 +30,9 @@ const PhotographerTile = ({
               "grayscale"}`}
             alt={`Service ${photographer.name}`}
           />
-          <div class="row justify-content-between">
-            <h5 class="col card-title text-start">{photographer.name}</h5>
-            <div class="col text-end">
+          <div class="row">
+            <h5 class="col card-title text-start m-0">{photographer.name}</h5>
+            <div class="col text-end m-0">
               {Array.from(Array(photographer.rating)).map(() => (
                 <i class="icon fa fa-star" aria-hidden="true"></i>
               ))}
@@ -41,7 +41,7 @@ const PhotographerTile = ({
               ))}
             </div>
           </div>
-          <div class="align-items-center">
+          <div class="align-items-center mt-2">
             {photographer.services.map((service) => (
               <span
                 class={`badge rounded-pill ${

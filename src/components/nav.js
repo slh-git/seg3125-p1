@@ -50,7 +50,7 @@ const Nav = () => {
             </li>
           </ul>
           <a
-            class="btn btn-outline-primary btn"
+            class="btn btn-primary btn"
             href="booking/select"
             role="button"
           >
