@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Focus Photo",
+  "name": "Studio photography booking website created for SEG 3125 Project 1 by Howard Tseng",
   "icons": [
     {
       "src": "favicon.ico",
