@@ -30,7 +30,7 @@ const Select = () => {
             <i class="fa fa-home" aria-hidden="true"></i> Home
           </a>
           {canSubmit() && (
-            <Link to="/booking/submit" class="btn btn-outline-primary">
+            <Link to={`/booking/submit?s=${service}&p=${photographer}`} class="btn btn-outline-primary">
               Continue
             </Link>
           )}
