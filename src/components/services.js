@@ -8,7 +8,7 @@ export const Services = () => {
       <div class="row">
         {servicesList.map((service) => (
           <div class="p-2 col-sm-6 col-lg-4">
-            <div class="card">
+            <a class="btn btn-outline-light card text-decoration-none" href={`booking/select?s=${service.id}`}>
               <div class="card-body">
                 <img
                   src={service.img}
@@ -16,11 +16,11 @@ export const Services = () => {
                   alt={`Service ${service.name}`}
                 />
                 <div class="row justify-content-between align-items-center">
-                  <h5 class="col card-title">{service.title}</h5>
+                  <h5 class="col card-title text-dark">{service.title}</h5>
                   <h6 class="col-auto text-muted">{`$${service.price}/hr`}</h6>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         ))}
       </div>

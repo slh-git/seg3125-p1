@@ -1,7 +1,3 @@
-.photographer-card {
-  cursor: pointer;
-}
-
 .grayscale {
   filter: grayscale(100%);
 }

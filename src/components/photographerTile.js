@@ -14,7 +14,7 @@ const PhotographerTile = ({
   return (
     <div class="p-2 col-sm-6 col-md-4 col-lg-3" onClick={onSelect}>
       <div
-        class={`card photographer-card ${
+        class={`btn btn-outline-light card text-dark ${
           isSelected && hasService()
             ? "border-primary"
             : !hasService()
@@ -31,8 +31,8 @@ const PhotographerTile = ({
             alt={`Service ${photographer.name}`}
           />
           <div class="row justify-content-between">
-            <h5 class="col card-title">{photographer.name}</h5>
-            <div class="col">
+            <h5 class="col card-title text-start">{photographer.name}</h5>
+            <div class="col text-end">
               {Array.from(Array(photographer.rating)).map(() => (
                 <i class="icon fa fa-star" aria-hidden="true"></i>
               ))}
