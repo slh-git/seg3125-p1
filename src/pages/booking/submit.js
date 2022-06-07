@@ -105,7 +105,6 @@ const Submit = () => {
             <li class="nav-item">
               <a
                 class="nav-link"
-                tabindex="-1"
                 href={`select?s=${service}&p=${photographer}`}
               >
                 Select
@@ -117,8 +116,8 @@ const Submit = () => {
             <li class="nav-item">
               <a
                 class="nav-link disabled text-decoration-underline"
-                href="#"
                 aria-current="page"
+                href="/#"
               >
                 Submit
               </a>

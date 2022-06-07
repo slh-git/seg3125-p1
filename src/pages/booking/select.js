@@ -49,7 +49,7 @@ const Select = () => {
           </a>
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link disabled text-decoration-underline" aria-current="page" href="#">
+              <a class="nav-link disabled text-decoration-underline" aria-current="page" href="/#">
                 Select
               </a>
             </li>
@@ -60,7 +60,6 @@ const Select = () => {
               <a
                 class={`nav-link ${canSubmit() ? "active" : "disabled"}`}
                 href={`/booking/submit?s=${service}&p=${photographer}`}
-                tabindex="-1"
               >
                 Submit
               </a>
