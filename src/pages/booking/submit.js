@@ -5,7 +5,6 @@ import Form from "react-bootstrap/Form";
 import { Modal } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 import { photographersList, servicesList } from "../../data/lists";
-import "./submit.css";
 
 const Submit = () => {
   // Getting the service and photographer from the url
