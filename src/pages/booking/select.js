@@ -6,7 +6,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import PhotographerTile from "../../components/photographerTile";
 
 const Select = () => {
-  let [searchParams] = useSearchParams();
+  let [searchParams, setSearchParams] = useSearchParams();
   const [service, setService] = useState(searchParams.get("s"));
   const [photographer, setPhotographer] = useState(searchParams.get("p"));
 
@@ -17,6 +17,24 @@ const Select = () => {
   const photographerHasService = (s) => {
     const p = photographersList.find((p) => photographer === p.id);
     return p && p.services.includes(s);
+  };
+
+  const selectService = (s) => {
+    const newS = service !== s.id ? s.id : "";
+    setService(newS);
+    setSearchParams({
+      s: newS,
+      p: photographer,
+    });
+  };
+
+  const selectPhotographer = (p) => {
+    const newP = photographer !== p.id ? p.id : "";
+    setPhotographer(newP);
+    setSearchParams({
+      s: service,
+      p: newP,
+    });
   };
 
   return (
@@ -30,7 +48,10 @@ const Select = () => {
             <i class="fa fa-home" aria-hidden="true"></i> Home
           </a>
           {canSubmit() && (
-            <Link to={`/booking/submit?s=${service}&p=${photographer}`} class="btn btn-outline-primary">
+            <Link
+              to={`/booking/submit?s=${service}&p=${photographer}`}
+              class="btn btn-outline-primary"
+            >
               Continue
             </Link>
           )}
@@ -61,7 +82,7 @@ const Select = () => {
                     : ""
                 } mx-2`}
                 id={`service-btn-${index}`}
-                onClick={() => setService(service !== s.id ? s.id : "")}
+                onClick={() => selectService(s)}
               >
                 {s.title}
               </button>
@@ -81,11 +102,7 @@ const Select = () => {
                 <PhotographerTile
                   photographer={p}
                   isSelected={photographer === p.id}
-                  onSelect={() =>
-                    photographer !== p.id
-                      ? setPhotographer(p.id)
-                      : setPhotographer("")
-                  }
+                  onSelect={() => selectPhotographer(p)}
                   serviceSelected={service}
                 />
               ))}
