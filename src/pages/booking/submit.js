@@ -192,7 +192,7 @@ const Submit = () => {
                   <h6 class="fw-normal">{`for ${serviceName()} photos`}</h6>
                 </div>
                 <h6>
-                  {`${hours()} x ${servicePrice().toLocaleString("en-US", {
+                  {`${hours()} ${hours() === 1 ? 'hr' : 'hrs'} x ${servicePrice().toLocaleString("en-US", {
                     style: "currency",
                     currency: "USD",
                   })}`}
@@ -200,7 +200,7 @@ const Submit = () => {
               </div>
               <div class="d-flex justify-content-between my-2">
                 <div class="text-start">
-                  <h6 class="fw-normal">Tax</h6>
+                  <h6 class="fw-normal">Tax (13%)</h6>
                 </div>
                 <h6>
                   {tax().toLocaleString("en-US", {
@@ -240,7 +240,7 @@ const Submit = () => {
           <p>
             <span>You've booked a </span>
             <strong>{serviceName()}</strong>
-            <span> session with </span>
+            <span> photography session with </span>
             <strong>{photographerName()}</strong>
             <span> on </span>
             <strong>{date}</strong>

@@ -29,7 +29,7 @@ const PhotographerListItem = ({ photographer, index }) => {
                   </span>
                 ))}
               </div>
-              <div class="col-3">
+              <div class="col-3 text-end">
                 <a
                   class="btn btn-sm btn-outline-primary"
                   href={`booking/select?p=${photographer.id}`}
