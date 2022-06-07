@@ -14,7 +14,7 @@ export const Photographers = () => {
               <h5>{photographer.name}</h5>
               <p>{photographer.description}</p>
               <div class="row justify-content-between">
-                <div class="col-auto">
+                <div class="col-3">
                   {Array.from(Array(photographer.rating)).map(() => (
                     <i class="icon fa fa-star" aria-hidden="true"></i>
                   ))}
@@ -22,17 +22,20 @@ export const Photographers = () => {
                     <i class="icon fa fa-star-o" aria-hidden="true"></i>
                   ))}
                 </div>
-                <div class="col-auto">
+                <div class="col-6 text-center">
                   {photographer.services.map((service) => (
                     <span class="badge rounded-pill bg-light text-dark mx-1">
                       {service}
                     </span>
                   ))}
                 </div>
-                <div class="col-auto">
-                  <button class="btn btn-sm btn-outline-primary">
+                <div class="col-3">
+                  <a
+                    class="btn btn-sm btn-outline-primary"
+                    href={`booking/select?p=${photographer.id}`}
+                  >
                     {`Book ${photographer.name}`}
-                  </button>
+                  </a>
                 </div>
                 <div />
               </div>

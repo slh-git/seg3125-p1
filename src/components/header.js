@@ -14,7 +14,7 @@ const Header = () => {
         </p>
         <a
           class="btn btn-outline-primary btn"
-          href="booking.html"
+          href="booking/select"
           role="button"
         >
           Book Now

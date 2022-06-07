@@ -4,14 +4,19 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import IndexPage from "./pages/index";
-import BookingPage from "./pages/booking";
+import Booking from "./pages/booking";
+import Select from "./pages/booking";
+import Submit from "./pages/booking";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<IndexPage />} />
-      <Route path="/booking" element={<BookingPage />} />
+      <Route path="booking" element={<Booking />}>
+        <Route path="select" element={<Select />} />
+        <Route path="submit" element={<Submit />} />
+      </Route>
     </Routes>
   </BrowserRouter>
 );

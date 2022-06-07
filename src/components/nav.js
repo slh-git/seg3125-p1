@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 const Nav = () => {
   return (
@@ -50,7 +51,7 @@ const Nav = () => {
           </ul>
           <a
             class="btn btn-outline-primary btn"
-            href="booking.html"
+            href="booking/select"
             role="button"
           >
             Book Now
