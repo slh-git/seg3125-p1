@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import Form from "react-bootstrap/Form";
-import { Modal } from "react-bootstrap";
+import { Form, Modal } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 import { photographersList, servicesList } from "../../data/lists";
 
@@ -294,10 +293,12 @@ const Submit = () => {
           </p>
           <hr />
           <p class="mb-2">Use this link to edit your session:</p>
-          <Form.Control
+          <input
+            class="form-control"
             type="text"
             value={window.location.href}
-            readOnly
+            aria-label="Booking session link"
+            readonly
             onClick={() => {
               navigator.clipboard.writeText(window.location.href);
               alert("Link copied to clipboard!");
