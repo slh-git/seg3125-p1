@@ -32,6 +32,7 @@ const Header = () => {
         <br />
         9:00am to 4:00pm
       </p>
+      <div></div>
     </header>
   );
 };
