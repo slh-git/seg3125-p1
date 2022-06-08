@@ -11,20 +11,11 @@ const PhotographerListItem = ({ photographer, index }) => {
       <div class="card-body">
         <div class="row">
           <div class="col-12 col-md-8 col-lg-9 col-xl-10">
-            <div className="row align-content-center mb-2">
-              <h5 class="col">{photographer.name}</h5>
-              <div class="col text-end">
-                <a
-                  class="btn btn-sm btn-outline-primary"
-                  href={`booking/select?p=${photographer.id}`}
-                >
-                  {`Book ${photographer.name}`}
-                </a>
+            <div className="d-flex flex-row">
+              <div class="me-3">
+                <h5>{photographer.name}</h5>
               </div>
-            </div>
-            <p class="mb-2">{photographer.description}</p>
-            <div class="row">
-              <div class="col-4 col-md-3 col-xl-2">
+              <div class="text-start">
                 {Array.from(Array(photographer.rating)).map(() => (
                   <i class="icon fa fa-star" aria-hidden="true"></i>
                 ))}
@@ -32,12 +23,23 @@ const PhotographerListItem = ({ photographer, index }) => {
                   <i class="icon fa fa-star-o" aria-hidden="true"></i>
                 ))}
               </div>
-              <div class="col text-center mb-3">
+            </div>
+            <p class="mb-2">{photographer.description}</p>
+            <div class="row">
+              <div class="col text-center text-md-start mb-2 mb-md-0">
                 {photographer.services.map((service) => (
                   <span class="badge rounded-pill bg-light text-dark mx-1">
                     {service}
                   </span>
                 ))}
+              </div>
+              <div class="col-12 col-md-4 col-xl-3 text-center text-md-end">
+                <a
+                  class="btn btn-sm btn-outline-primary"
+                  href={`booking/select?p=${photographer.id}`}
+                >
+                  {`Book ${photographer.name}`}
+                </a>
               </div>
             </div>
           </div>
@@ -49,7 +51,10 @@ const PhotographerListItem = ({ photographer, index }) => {
             />
           </div>
         </div>
-        <div class="accordion mt-4 mt-md-2" id={`#accordion-${photographer.id}`}>
+        <div
+          class="accordion mt-3"
+          id={`#accordion-${photographer.id}`}
+        >
           <div class="accordion-item">
             <h2 class="accordion-header" id={`#heading-${photographer.id}`}>
               <button
