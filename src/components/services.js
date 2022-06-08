@@ -7,7 +7,7 @@ export const Services = () => {
     <div class="container">
       <div class="row">
         {servicesList.map((service) => (
-          <div class="p-2 col-sm-6 col-lg-4">
+          <div class="p-2 col-sm-6 col-xl-4">
             <a class="btn btn-outline-light card text-decoration-none" href={`booking/select?s=${service.id}`}>
               <div class="card-body">
                 <img
