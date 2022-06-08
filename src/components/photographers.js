@@ -32,7 +32,7 @@ const PhotographerListItem = ({ photographer, index }) => {
                   <i class="icon fa fa-star-o" aria-hidden="true"></i>
                 ))}
               </div>
-              <div class="col text-end mb-3">
+              <div class="col text-center mb-3">
                 {photographer.services.map((service) => (
                   <span class="badge rounded-pill bg-light text-dark mx-1">
                     {service}
@@ -49,7 +49,7 @@ const PhotographerListItem = ({ photographer, index }) => {
             />
           </div>
         </div>
-        <div class="accordion mt-4" id={`#accordion-${photographer.id}`}>
+        <div class="accordion mt-4 mt-md-2" id={`#accordion-${photographer.id}`}>
           <div class="accordion-item">
             <h2 class="accordion-header" id={`#heading-${photographer.id}`}>
               <button
@@ -60,7 +60,7 @@ const PhotographerListItem = ({ photographer, index }) => {
                 aria-expanded="true"
                 aria-controls={`collapse-${photographer.id}`}
               >
-                Show {photographer.name}'s past photos
+                Show {photographer.name}'s portfolio
               </button>
             </h2>
             <div
