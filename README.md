@@ -1,2 +1,2 @@
-# seg3125-p1
-Project 1 of SEG 3125 by Howard Tseng
+# SEG 3125 Project 1
+Studio photography booking website created for SEG 3125 Project 1 by Howard Tseng
