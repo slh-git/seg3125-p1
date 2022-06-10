@@ -4,6 +4,7 @@ import "./select.css";
 import { photographersList, servicesList } from "../../data/lists";
 import { Link, useSearchParams } from "react-router-dom";
 import PhotographerTile from "../../components/photographerTile";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const Select = () => {
   let [searchParams, setSearchParams] = useSearchParams();
@@ -49,7 +50,11 @@ const Select = () => {
           </a>
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link disabled text-decoration-underline" aria-current="page" href="/#">
+              <a
+                class="nav-link disabled text-decoration-underline"
+                aria-current="page"
+                href="/#"
+              >
                 Select
               </a>
             </li>
@@ -65,14 +70,27 @@ const Select = () => {
               </a>
             </li>
           </ul>
-          <Link
-            to={`/booking/submit?s=${service}&p=${photographer}`}
-            class={`btn  ${
-              canSubmit() ? "btn-primary" : "btn-secondary disabled"
-            }`}
+          <OverlayTrigger
+            overlay={
+              <Tooltip>
+                {!canSubmit()
+                  ? "Please select a service that the selected photographer can provide"
+                  : "Click to continue to the next step"}
+              </Tooltip>
+            }
+            placement="bottom"
           >
-            Continue
-          </Link>
+            <span>
+              <Link
+                to={`/booking/submit?s=${service}&p=${photographer}`}
+                class={`btn  ${
+                  canSubmit() ? "btn-primary" : "btn-secondary disabled"
+                }`}
+              >
+                Continue
+              </Link>
+            </span>
+          </OverlayTrigger>
         </div>
       </nav>
       {/* Selecting service and photographer */}
