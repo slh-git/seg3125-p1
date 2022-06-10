@@ -4,6 +4,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import { Form, Modal } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 import { photographersList, servicesList } from "../../data/lists";
+import { PhotographerListItem } from "../../components/photographers";
 
 const Submit = () => {
   // Getting the service and photographer from the url
@@ -35,6 +36,7 @@ const Submit = () => {
   const [showConfirm, setShowConfirm] = useState(false);
 
   // Getters for service and photographer information
+  const getPhotographer = () => photographersList.find((p) => p.id === photographer);
   const photographerName = () =>
     photographersList.find((p) => p.id === photographer).name;
   const serviceName = () => servicesList.find((s) => s.id === service).title;
@@ -254,6 +256,7 @@ const Submit = () => {
                 <i class="fa fa-check" aria-hidden="true"></i> Confirm
               </button>
             </div>
+            <PhotographerListItem photographer={getPhotographer()} index={0} halved={true}/>
           </div>
         </div>
       </div>

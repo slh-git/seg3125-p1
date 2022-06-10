@@ -5,12 +5,17 @@ import "font-awesome/css/font-awesome.min.css";
 import "./photographers.css";
 import { photographersList } from "../data/lists";
 
-const PhotographerListItem = ({ photographer, index }) => {
+export const PhotographerListItem = ({
+  photographer,
+  index,
+  showButton,
+  halved = false,
+}) => {
   return (
     <div class="card my-4">
       <div class="card-body">
         <div class="row">
-          <div class="col-12 col-md-8 col-lg-9 col-xl-10">
+          <div class={`col-12 ${halved ? '' : 'col-md-8 col-lg-9 col-xl-10'}`}>
             <div className="d-flex flex-row">
               <div class="me-3">
                 <h5>{photographer.name}</h5>
@@ -24,7 +29,7 @@ const PhotographerListItem = ({ photographer, index }) => {
                 ))}
               </div>
             </div>
-            <p class="mb-2">{photographer.description}</p>
+            <p class="mb-2 text-start">{photographer.description}</p>
             <div class="row">
               <div class="col text-center text-md-start mb-2 mb-md-0">
                 {photographer.services.map((service) => (
@@ -33,28 +38,27 @@ const PhotographerListItem = ({ photographer, index }) => {
                   </span>
                 ))}
               </div>
-              <div class="col-12 col-md-4 col-xl-3 text-center text-md-end">
-                <a
-                  class="btn btn-sm btn-outline-primary"
-                  href={`booking/select?p=${photographer.id}`}
-                >
-                  {`Book ${photographer.name}`}
-                </a>
-              </div>
+              {showButton && (
+                <div class="col-12 col-md-4 col-xl-3 text-center text-md-end">
+                  <a
+                    class="btn btn-sm btn-outline-primary"
+                    href={`booking/select?p=${photographer.id}`}
+                  >
+                    {`Book ${photographer.name}`}
+                  </a>
+                </div>
+              )}
             </div>
           </div>
-          <div class="d-flex justify-content-center col-md-4 col-lg-3 col-xl-2 mt-2 mt-md-0">
+          <div class={`d-flex justify-content-center ${halved ? '' : 'col-md-4 col-lg-3 col-xl-2'} mt-2 mt-md-0`}>
             <img
               src={photographer.img}
-              class="col-4 col-md-12 mt-2 mt-md-0"
+              class={`col-4 mt-2 ${halved ? 'mt-3' : 'col-md-12 mt-md-0'}`}
               alt={`Photograper ${photographer.name}`}
             />
           </div>
         </div>
-        <div
-          class="accordion mt-3"
-          id={`#accordion-${photographer.id}`}
-        >
+        <div class="accordion mt-3" id={`#accordion-${photographer.id}`}>
           <div class="accordion-item">
             <h2 class="accordion-header" id={`#heading-${photographer.id}`}>
               <button
@@ -77,7 +81,7 @@ const PhotographerListItem = ({ photographer, index }) => {
               <div class="accordion-body">
                 <div class="row">
                   {Array.from(Array(10)).map((_, i) => (
-                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class={`col-4 ${halved ? 'col-md-6 col-lg-4' : 'col-lg-3 col-xl-2'}`}>
                       <img
                         src={`https://picsum.photos/300?random=${index * 10 +
                           i}`}
@@ -100,7 +104,11 @@ export const Photographers = () => {
   return (
     <div class="container p-0">
       {photographersList.map((photographer, index) => (
-        <PhotographerListItem photographer={photographer} index={index} />
+        <PhotographerListItem
+          photographer={photographer}
+          index={index}
+          showButton={true}
+        />
       ))}
     </div>
   );
