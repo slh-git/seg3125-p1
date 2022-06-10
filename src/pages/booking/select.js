@@ -120,7 +120,7 @@ const Select = () => {
                 id={`service-btn-${index}`}
                 onClick={() => selectService(s)}
               >
-                {s.title}
+                {`${s.title} - $${s.price}/hr`}
               </button>
             </div>
           ))}
