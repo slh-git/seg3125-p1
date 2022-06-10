@@ -31,7 +31,7 @@ export const PhotographerListItem = ({
             </div>
             <p class="mb-2 text-start">{photographer.description}</p>
             <div class="row">
-              <div class="col text-center text-md-start mb-2 mb-md-0">
+              <div class="col text-center text-md-start mb-3 mb-md-0">
                 {photographer.services.map((service) => (
                   <span class="badge rounded-pill bg-light text-dark mx-1">
                     {service}

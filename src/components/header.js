@@ -9,9 +9,9 @@ const Header = () => {
       <div></div>
       <div>
         <h1 class="display-1">Focus Photo</h1>
-        <p class="font-weight-light py-2">
+        <h6 class="fw-normal py-2">
           Affordable studio photography service for all
-        </p>
+        </h6>
         <a
           class="btn btn-primary btn"
           href="booking/select"
@@ -20,7 +20,7 @@ const Header = () => {
           Book Now
         </a>
       </div>
-      <p class="font-weight-light py-2">
+      <p class="fw-normal py-2">
         2357 Front Street
         <br />
         Toronto, Ontario M5J 2N1
