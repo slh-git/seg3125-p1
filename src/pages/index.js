@@ -23,21 +23,14 @@ const IndexPage = () => {
           <div>
             <h2 class="display-5">About</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              ac sem molestie, volutpat leo eget, molestie sem. Morbi odio
-              purus, egestas non ornare a, vestibulum a sem. Nullam ac eros
-              vitae odio aliquam vestibulum ut vel odio. Nulla est ligula,
-              molestie eget elit vehicula, vestibulum sollicitudin purus. Nulla
-              interdum elit in augue sagittis, id elementum mauris lacinia.
-              Etiam finibus sodales nisi, eu varius velit ornare eu. Sed mi
-              ante, pharetra quis faucibus a, malesuada vitae metus. Cras neque
-              mi, hendrerit sed mauris sit amet, tempor consectetur metus. Morbi
-              a ligula eget purus blandit porta nec et ex. Nam euismod finibus
-              mauris, in cursus orci tempus vel. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Etiam tempus eros vitae massa
-              pharetra semper. Sed id ex volutpat felis facilisis sagittis quis
-              vel dui. Donec sed volutpat dolor. Aliquam ut aliquet neque, eu
-              facilisis elit.
+              Focus Photo is a professional studio photography service, aiming
+              to provide accessible studio photography to all since 2010. We
+              have a team of highly qualified and experienced photographers who
+              are dedicated to providing the best studio photography service to
+              our clients. We believe that everyone should be able to have
+              access to professional studio photography services, and we're
+              always looking for talented and experienced photographers to join
+              our team to further expand our services.
             </p>
           </div>
         </section>
@@ -53,6 +46,6 @@ const IndexPage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default IndexPage;
