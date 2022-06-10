@@ -12,10 +12,10 @@ export const PhotographerListItem = ({
   halved = false,
 }) => {
   return (
-    <div class="card my-4">
+    <div class="card">
       <div class="card-body">
         <div class="row">
-          <div class={`col-12 ${halved ? '' : 'col-md-8 col-lg-9 col-xl-10'}`}>
+          <div class={`col-12 ${halved ? "" : "col-md-8 col-lg-9 col-xl-10"}`}>
             <div className="d-flex flex-row">
               <div class="me-3">
                 <h5>{photographer.name}</h5>
@@ -50,10 +50,14 @@ export const PhotographerListItem = ({
               )}
             </div>
           </div>
-          <div class={`d-flex justify-content-center ${halved ? '' : 'col-md-4 col-lg-3 col-xl-2'} mt-2 mt-md-0`}>
+          <div
+            class={`d-flex justify-content-center ${
+              halved ? "" : "col-md-4 col-lg-3 col-xl-2"
+            } mt-2 mt-md-0`}
+          >
             <img
               src={photographer.img}
-              class={`col-4 mt-2 ${halved ? 'mt-3' : 'col-md-12 mt-md-0'}`}
+              class={`col-4 mt-2 ${halved ? "mt-3" : "col-md-12 mt-md-0"}`}
               alt={`Photograper ${photographer.name}`}
             />
           </div>
@@ -81,7 +85,11 @@ export const PhotographerListItem = ({
               <div class="accordion-body">
                 <div class="row">
                   {Array.from(Array(10)).map((_, i) => (
-                    <div class={`col-4 ${halved ? 'col-md-6 col-lg-4' : 'col-lg-3 col-xl-2'}`}>
+                    <div
+                      class={`col-4 ${
+                        halved ? "col-md-6 col-lg-4" : "col-lg-3 col-xl-2"
+                      }`}
+                    >
                       <img
                         src={`https://picsum.photos/300?random=${index * 10 +
                           i}`}
@@ -104,11 +112,13 @@ export const Photographers = () => {
   return (
     <div class="container p-0">
       {photographersList.map((photographer, index) => (
-        <PhotographerListItem
-          photographer={photographer}
-          index={index}
-          showButton={true}
-        />
+        <div class="my-4">
+          <PhotographerListItem
+            photographer={photographer}
+            index={index}
+            showButton={true}
+          />
+        </div>
       ))}
     </div>
   );

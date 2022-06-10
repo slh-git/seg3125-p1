@@ -36,7 +36,8 @@ const Submit = () => {
   const [showConfirm, setShowConfirm] = useState(false);
 
   // Getters for service and photographer information
-  const getPhotographer = () => photographersList.find((p) => p.id === photographer);
+  const getPhotographer = () =>
+    photographersList.find((p) => p.id === photographer);
   const photographerName = () =>
     photographersList.find((p) => p.id === photographer).name;
   const serviceName = () => servicesList.find((s) => s.id === service).title;
@@ -256,7 +257,36 @@ const Submit = () => {
                 <i class="fa fa-check" aria-hidden="true"></i> Confirm
               </button>
             </div>
-            <PhotographerListItem photographer={getPhotographer()} index={0} halved={true}/>
+            <div class="accordion mt-3" id={`#accordion-info`}>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id={`#heading-info`}>
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#collapse-info`}
+                    aria-expanded="true"
+                    aria-controls={`collapse-info`}
+                  >
+                    Show {photographerName()}'s information
+                  </button>
+                </h2>
+                <div
+                  id={`collapse-info`}
+                  class="accordion-collapse collapse"
+                  aria-labelledby={`#heading-info`}
+                  data-bs-parent={`#accordion-info`}
+                >
+                  <div class="accordion-body">
+                    <PhotographerListItem
+                      photographer={getPhotographer()}
+                      index={0}
+                      halved={true}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
