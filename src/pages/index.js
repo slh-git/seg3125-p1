@@ -1,7 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import Footer from "../components/footer";
 import { Services } from "../components/services";
 import { Photographers } from "../components/photographers";
 import Nav from "../components/nav";
@@ -42,7 +41,6 @@ const IndexPage = () => {
           <h2 class="display-5">Photographers</h2>
           <Photographers />
         </section>
-        <Footer />
       </div>
     </div>
   );
