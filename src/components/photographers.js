@@ -20,7 +20,7 @@ export const PhotographerListItem = ({
               <div class="me-3">
                 <h5>{photographer.name}</h5>
               </div>
-              <div class="text-start">
+              <div class="photographer-star">
                 {Array.from(Array(photographer.rating)).map(() => (
                   <i class="icon fa fa-star" aria-hidden="true"></i>
                 ))}
@@ -29,9 +29,9 @@ export const PhotographerListItem = ({
                 ))}
               </div>
             </div>
-            <p class="mb-2 text-start">{photographer.description}</p>
+            <p class="mb-2 photographer-desc">{photographer.description}</p>
             <div class="row">
-              <div class="col text-center text-md-start mb-3 mb-md-0">
+              <div class="photographer-services col">
                 {photographer.services.map((service) => (
                   <span class="badge rounded-pill bg-light text-dark mx-1">
                     {service}

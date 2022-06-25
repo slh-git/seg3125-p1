@@ -31,7 +31,7 @@ const PhotographerTile = ({
             alt={`Service ${photographer.name}`}
           />
           <div class="row">
-            <h5 class="col card-title text-start m-0">{photographer.name}</h5>
+            <h5 class="photographer-name col card-title m-0">{photographer.name}</h5>
             <div class="col text-end m-0">
               {Array.from(Array(photographer.rating)).map(() => (
                 <i class="icon fa fa-star" aria-hidden="true"></i>

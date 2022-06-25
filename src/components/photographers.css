@@ -1,8 +1,30 @@
-.icon {
+.photographer-desc.icon {
   color: orange;
 }
 
 img {
   max-width: 100%;
   object-fit: contain;
+}
+
+.col{
+  text-align: center;
+}
+
+.photographer-desc{
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.photographer-services{
+  text-align: left !important;
+  margin-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+.photographer-star {
+  text-align: left;
+}
+.photographer-name {
+  text-align: left;
 }
