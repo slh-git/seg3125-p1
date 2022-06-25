@@ -20,7 +20,7 @@ const IndexPage = () => {
       >
         <section id="about">
           <div>
-            <h2 class="display-5">About</h2>
+            <h2 class="about display-5">About</h2>
             <p>
               Focus Photo is a professional studio photography service, aiming
               to provide accessible studio photography to all since 2010. We
@@ -34,11 +34,11 @@ const IndexPage = () => {
           </div>
         </section>
         <section id="services">
-          <h2 class="display-5">Services</h2>
+          <h2 class="services display-5">Services</h2>
           <Services />
         </section>
         <section id="photographers">
-          <h2 class="display-5">Photographers</h2>
+          <h2 class="photographers display-5">Photographers</h2>
           <Photographers />
         </section>
       </div>

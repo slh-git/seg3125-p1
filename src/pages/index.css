@@ -3,3 +3,16 @@ section:before {
   content: "";
   display: block;
 }
+.about{
+  font-weight: 400;
+}
+
+.services{
+
+  font-weight: 400;
+}
+
+.photographers{
+  font-weight: 400;
+
+}
