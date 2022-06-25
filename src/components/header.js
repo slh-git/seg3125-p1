@@ -4,7 +4,7 @@ import "./header.css";
 
 const Header = () => {
   return (
-    <header class="fill-height text-center justify-content-center align-items-center row header">
+    <header class="fill-height row header">
       <div></div>
       <div></div>
       <div>
