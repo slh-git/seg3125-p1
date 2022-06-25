@@ -1,0 +1,21 @@
+.service-title{
+    color: black;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    text-align: left ;
+}
+.service-price{
+    color:gray;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    text-align: right !important;    
+
+    flex: 0 0 auto;
+    width: auto;
+}
+.service-row{
+    align-items: center
+}
+.col{
+    flex: 1 0 0%;
+}
